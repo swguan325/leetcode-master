@@ -18,7 +18,7 @@ public class Solution54 {
     	int wLen = matrix[0].length;
     	int Hen = matrix.length;
 		int i = 0, j = 0, d = 0, count = wLen;
-		char[] dirs = new char[] { 'd', 's', 'w', 'a' };
+		char[] dirs = new char[] { 'd', 's', 'a', 'w' };
     	while (true) {
     		if (count == 0) {
     			break;
@@ -49,7 +49,7 @@ public class Solution54 {
 						i++;
 					}
 					break;
-				case 'w':
+				case 'a':
 					if (count == 0) {
 						i--;
 						d++;
@@ -60,7 +60,7 @@ public class Solution54 {
 						j--;
 					}
 					break;
-				case 'a':
+				case 'w':
 					if (count == 0) {
 						j++;
 						d = 0;
