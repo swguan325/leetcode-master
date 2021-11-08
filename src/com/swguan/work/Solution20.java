@@ -11,39 +11,40 @@ import java.util.Stack;
 public class Solution20 {
 	
 	public boolean isValid(String s) {
+		boolean isValid = true;
 		Stack<Character> stack = new Stack<>();
 		for (int i = 0; i < s.length(); i++) {
-			char ch = s.charAt(i);
-			if (ch == '(' || ch == '[' || ch == '{') {
-				stack.push(ch);
+			if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
+				stack.push(s.charAt(i));
 			} else {
-				if (stack.isEmpty()) {
-					return false;
-				}
-				switch (ch) {
+				if (stack.isEmpty()) return false;
+				switch (s.charAt(i)) {
 				case ')':
 					if (stack.peek() == '(') {
 						stack.pop();
-						continue;
+					} else {
+						return false;
 					}
 					break;
 				case ']':
 					if (stack.peek() == '[') {
 						stack.pop();
-						continue;
+					} else {
+						return false;
 					}
 					break;
 				case '}':
 					if (stack.peek() == '{') {
 						stack.pop();
-						continue;
+					} else {
+						return false;
 					}
 					break;
 				}
-				return false;
+
 			}
 		}
-		return stack.isEmpty();
+		return isValid && stack.isEmpty();
 	}
 	
 }
