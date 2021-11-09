@@ -4,7 +4,7 @@ package com.swguan.work;
  * author: swGuan
  * 1. add a node before head, such as 0
  * 2. ex: swap 1 =>  2 => 3 => 4
- * 3. the next of 1 is 3, the next of 2 is 1, so the next of 0 is 1
+ * 3. the next of 1 is 3, the next of 2 is 1, so the next of 0 is 2
  * 4. after swap, the pointer move twice 
  * 
  */
